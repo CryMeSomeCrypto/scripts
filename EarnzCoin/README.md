@@ -2,11 +2,11 @@
 Masternode Scripts
 ---------
 
-Chaincoin - version 0.1 - CHC Donation: CWZErZoaiGiUTnELTUjH5iymQncDStb9o6
 
+EarnzCoin - version 0.1 - ERZ Donation: EQa1P4ZGHB3tvbBTH8Hc3u4LJcDFCfj1gr
 
 ---------
-ChainCoin Masternode Setup
+EarnzCoin Masternode Setup
 ---------
 Controller-Cold-Setup
 This is the best method to setup your Masternodes. The wallet containing the coins does not have to be exposed and can run on your local computer. It does not have to run all the time.
@@ -81,11 +81,11 @@ After registration you get to the Dashboard. You have to do the first payment wi
 
 9.	Download and execute script on VPS: (each MN must have unique ports)
 
-		wget https://raw.githubusercontent.com/CryMeSomeCrypto/scripts/master/Chaincoin/CHC-setup.sh
+		wget https://raw.githubusercontent.com/CryMeSomeCrypto/scripts/master/EarnzCoin/ERZ-setup.sh
 
-		chmod 755 CHC-setup.sh
+		chmod 755 ERZ-setup.sh
 
-		./CHC-setup.sh
+		./ERZ-setup.sh
 
 If you make an error when typing the interactive stuff: ctrl+c and restart the script
 
@@ -99,7 +99,7 @@ b.	Type the following into the VPS.
 
 c.	Each MN has now its own control script under ~/bin (named with alias you typed before)
 
-d.	To see if the blocks are syncing “watch chaincoin-cli_mn1.sh getinfo”
+d.	To see if the blocks are syncing “watch EarnzCoin-cli_mn1.sh getinfo”
 
 e.	If sync is finished go to your desktop wallet and start MNs in the masternode tab (unlock wallet before).
 
