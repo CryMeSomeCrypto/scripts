@@ -41,7 +41,7 @@ if [[ $DOSETUP =~ "y" ]] ; then
   mkswap /var/swap.img
   swapon /var/swap.img
 
-  git clone https://github.com/chaincoin-legacy/chaincoin -b ChainCoin_0.13-dev
+  git clone https://github.com/chaincoin-legacy/chaincoin
   cd chaincoin
   ./autogen.sh
   ./configure --without-gui
