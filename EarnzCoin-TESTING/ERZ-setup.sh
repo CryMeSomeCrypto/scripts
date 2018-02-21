@@ -18,32 +18,42 @@ echo "Do you want to install all needed dependencies (no if you did it before)? 
 read DOSETUP
 
 if [[ $DOSETUP =~ "y" ]] ; then
-  sudo apt-get update -y
-  sudo apt-get upgrade -y
-  sudo apt-get dist-upgrade -y
-  sudo apt-get install nano htop git -y
+  sudo apt-get update
 
-  sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils software-properties-common -y
+  sudo apt-get upgrade
 
-  apt-get install -y libminiupnpc-dev libdb++-dev libdb-dev libcrypto++-dev libqrencode-dev libboost-all-dev build-essential libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libssl-dev libdb++-dev libssl-dev ufw git software-properties-common
-
-  sudo apt-get install libzmq3-dev libminiupnpc-dev libssl-dev libevent-dev -y
+  sudo apt-get install automake libdb++-dev build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev libminiupnpc-dev git software-properties-common python-software-properties g++ bsdmainutils libevent-dev -y
 
   sudo add-apt-repository -y ppa:bitcoin/bitcoin
 
-  sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+  sudo apt-get update
 
-  sudo apt-get install libdb5.3-dev libdb5.3++-dev build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils git libboost-all-dev libminiupnpc-dev libqt5gui5 libqt5core5a libqt5webkit5-dev libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev libgmp3-dev git -y
+  sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+  
+  sudo apt-get install libgmp3-dev
 
 
   git clone https://github.com/Frenzel1337/EarnzCoin
 
-  cd EarnzCoin/src/leveldb/
-  chmod +x build_detect_platform
-  make libleveldb.a libmemenv.a
+cd EarnzCoin/
 
-  cd ..
-  make -f makefile.unix
+sudo dd if=/dev/zero of=/swapfile bs=1M count=2000
+sudo mkswap /swapfile
+sudo chown root:root /swapfile
+sudo chmod 0600 /swapfile
+sudo swapon /swapfile
+
+#make swap permanent
+sudo echo "/swapfile none swap sw 0 0" >> /etc/fstab
+
+cd src
+
+make
+
+mv EarnzCoind /usr/local/bin/
+
+cd
+
 
   # dd if=/dev/zero of=/var/swap.img bs=1024k count=1000
   # mkswap /var/swap.img

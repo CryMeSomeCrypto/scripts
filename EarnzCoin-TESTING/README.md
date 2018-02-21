@@ -2,7 +2,6 @@
 Masternode Scripts
 ---------
 
-
 EarnzCoin - version 0.1 - ERZ Donation: EQa1P4ZGHB3tvbBTH8Hc3u4LJcDFCfj1gr
 
 ---------
@@ -69,7 +68,7 @@ After registration you get to the Dashboard. You have to do the first payment wi
 
 7.	Choose a region near you. It does not really matter.
 
-	a.	As “Server Type” choose Ubuntu and click 16.04 
+	a.	As “Server Type” choose Ubuntu and click 14.04 
 
 	b.	As Server Size choose the 5$ instance with 1GB Ram. If available you can choose the 2.50$ one if you only want to run one or two nodes on it.
 
@@ -110,4 +109,4 @@ f.	You can close your Desktop wallet after a while.
 Adding more nodes to existing VPS
 ---------
 
-To add more ERZ MNs to a existing server setup with the setup.sh script before just restart the script and type “n” when asked if you want to install the dependencies at the beginning. After that just follow the steps from before in the interactive script.
+To add more CHC MNs to a existing server setup with the setup.sh script before just restart the script and type “n” when asked if you want to install the dependencies at the beginning. After that just follow the steps from before in the interactive script.
