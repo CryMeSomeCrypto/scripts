@@ -29,7 +29,7 @@ if [[ $DOSETUP =~ "y" ]] ; then
   sudo apt-get update
 
   sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
-  
+
   sudo apt-get install libgmp3-dev
 
 
@@ -48,7 +48,7 @@ sudo echo "/swapfile none swap sw 0 0" >> /etc/fstab
 
 cd src
 
-make
+make -f makefile.unix
 
 mv EarnzCoind /usr/local/bin/
 
