@@ -2,7 +2,7 @@
 Masternode Scripts
 ---------
 
-Chaincoin - version 0.1 - CHC Donation: CWZErZoaiGiUTnELTUjH5iymQncDStb9o6
+Chaincoin - version 0.1 
 
 
 ---------

@@ -2,7 +2,7 @@
 Masternode Scripts
 ---------
 
-EarnzCoin - version 0.1 - ERZ Donation: EQa1P4ZGHB3tvbBTH8Hc3u4LJcDFCfj1gr
+EarnzCoin - version 0.1 
 
 ---------
 EarnzCoin Masternode Setup
