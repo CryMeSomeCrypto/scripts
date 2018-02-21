@@ -18,51 +18,40 @@ echo "Do you want to install all needed dependencies (no if you did it before)? 
 read DOSETUP
 
 if [[ $DOSETUP =~ "y" ]] ; then
-  sudo apt-get update
-  sudo apt-get upgrade
-  sudo apt-get install software-properties-common python-software-properties
-  sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -y install libwww-perl build-essential libtool automake autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils libdb++-dev libminiupnpc-dev libboost-all-dev libqrencode-dev nano htop git bc unzip
 
-  sudo apt-get update
-  sudo apt-get install git
-  sudo apt-get install -y pkg-config
+#setup swap
+fallocate -l 4G /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+echo "vm.swappiness=10" >> /etc/sysctl.conf && echo "/swapfile none swap sw 0 0"
 
-  sudo apt-get install build-essential
-  sudo apt-get install libtool autotools-dev autoconf automake
-  sudo apt-get install libssl-dev
-  sudo add-apt-repository ppa:bitcoin/bitcoin
-  sudo apt-get update
-  sudo apt-get install libboost-all-dev
-  sudo apt-get install libdb4.8-dev
-  sudo apt-get install libdb4.8++-dev
-  sudo apt-get install libevent-dev
+#install GCFORK
+rm -r -R GCFORK &> output.log
+rm -r -R /root/.MRJA/ &> output.log
+git clone https://github.com/legends420/GCFORK.git
+cd /root/GCFORK/src
+make -f makefile.unix
+/root/GCFORK/src/Ganjad &> output.log
 
-  dd if=/dev/zero of=/var/swap.img bs=1024k count=1000
-  mkswap /var/swap.img
-  swapon /var/swap.img
 
-  git clone https://github.com/chaincoin-legacy/chaincoin
-  cd chaincoin
-  ./autogen.sh
-  ./configure --without-gui
-  make
-  make install
-  cd
-  mkdir ~/.chaincoin/
 
-  # sudo mv  chaincoin/bin/* /usr/bin
-  cd
+# sudo mv  chaincoin/bin/* /usr/bin
+cd
 
-  sudo apt-get install -y ufw
-  sudo ufw allow ssh/tcp
-  sudo ufw limit ssh/tcp
-  sudo ufw logging on
-  echo "y" | sudo ufw enable
-  sudo ufw status
+sudo apt-get install -y ufw
+sudo ufw allow ssh/tcp
+sudo ufw limit ssh/tcp
+sudo ufw logging on
+echo "y" | sudo ufw enable
+sudo ufw status
 
-  mkdir -p ~/bin
-  echo 'export PATH=~/bin:$PATH' > ~/.bash_aliases
-  source ~/.bashrc
+mkdir -p ~/bin
+echo 'export PATH=~/bin:$PATH' > ~/.bash_aliases
+source ~/.bashrc
 fi
 
 ## Setup conf
