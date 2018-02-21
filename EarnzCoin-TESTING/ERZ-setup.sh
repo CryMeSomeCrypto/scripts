@@ -30,7 +30,7 @@ if [[ $DOSETUP =~ "y" ]] ; then
 
   sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 
-  sudo apt-get install libgmp3-dev
+  sudo apt-get install libgmp3-dev -y
 
 
   git clone https://github.com/Frenzel1337/EarnzCoin
