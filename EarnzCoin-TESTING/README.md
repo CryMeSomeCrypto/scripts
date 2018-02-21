@@ -20,7 +20,7 @@ We will create an address, private key and transaction for each masternode (MN i
 
 1.	Open Console: Tools - Debug Console
 
-2.	Type ìgetaccountaddress MN1î and press Enter. Repeat for MN2, MN3, etc
+2.	Type ‚Äúgetaccountaddress MN1‚Äù and press Enter. Repeat for MN2, MN3, etc
 
 3.	Send exactly 1000 coins to each MN address
 
@@ -31,15 +31,15 @@ Now add a Line for each MN with the following Format:
 
 a.	Begin by entering and alias IP:port
 
-	i.	[Alias] the name of the MN receiving address (we named them MN1, MN2, Ö)
+	i.	[Alias] the name of the MN receiving address (we named them MN1, MN2, ‚Ä¶)
 
 	ii.	[IP] The static IP of your server
 
 	iii.	[port] A port the MN will connect to. The port is not fixed and multiple nodes can run on one server but need different ports.
 
-b.	Next we get the ìmasternodeprivkey ì
+b.	Next we get the ‚Äúmasternodeprivkey ‚Äú
 
-	i.	[Genkey] Open debug console again, type ìmasternode genkeyî and press enter
+	i.	[Genkey] Open debug console again, type ‚Äúmasternode genkey‚Äù and press enter
 
 	ii.	Repeat the line for each MN you want to setup
 
@@ -47,11 +47,11 @@ b.	Next we get the ìmasternodeprivkey ì
 
 c.	Next we will add txhash  and outputindex
 
-	i.	[Txhash] Go to the debug console again, type ìmasternode outputsî and press enter
+	i.	[Txhash] Go to the debug console again, type ‚Äúmasternode outputs‚Äù and press enter
 
-	ii.	[outputindex] If you send the coins in one transaction the ìtxhashî will be the same. If you add a masternode later, another tuple will be added. So every masternode has a unique pair of txhash and outputindex
+	ii.	[outputindex] If you send the coins in one transaction the ‚Äútxhash‚Äù will be the same. If you add a masternode later, another tuple will be added. So every masternode has a unique pair of txhash and outputindex
 
-	iii.	Copy the information to the config file (Make sure you donít forget the index!)
+	iii.	Copy the information to the config file (Make sure you don‚Äôt forget the index!)
 
 5.	Save the file and restart the wallet.
 
@@ -69,19 +69,19 @@ After registration you get to the Dashboard. You have to do the first payment wi
 
 7.	Choose a region near you. It does not really matter.
 
-	a.	As ìServer Typeî choose Ubuntu and click 16.04 
+	a.	As ‚ÄúServer Type‚Äù choose Ubuntu and click 16.04 
 
 	b.	As Server Size choose the 5$ instance with 1GB Ram. If available you can choose the 2.50$ one if you only want to run one or two nodes on it.
 
 	c.	Scroll down and give the node a name.
 
-	d.	After that click ìDeploy nowî in the overview you should see this:
+	d.	After that click ‚ÄúDeploy now‚Äù in the overview you should see this:
 
 8.	Connect to the Server. 
 
 9.	Download and execute script on VPS: (each MN must have unique ports)
 
-		wget https://raw.githubusercontent.com/CryMeSomeCrypto/scripts/master/EarnzCoin/ERZ-setup.sh
+		wget https://raw.githubusercontent.com/CryMeSomeCrypto/scripts/master/EarnzCoin-TESTING/ERZ-setup.sh
 
 		chmod 755 ERZ-setup.sh
 
@@ -99,7 +99,7 @@ b.	Type the following into the VPS.
 
 c.	Each MN has now its own control script under ~/bin (named with alias you typed before)
 
-d.	To see if the blocks are syncing ìwatch EarnzCoin-cli_mn1.sh getinfoî
+d.	To see if the blocks are syncing ‚Äúwatch EarnzCoin-cli_mn1.sh getinfo‚Äù
 
 e.	If sync is finished go to your desktop wallet and start MNs in the masternode tab (unlock wallet before).
 
@@ -110,4 +110,4 @@ f.	You can close your Desktop wallet after a while.
 Adding more nodes to existing VPS
 ---------
 
-To add more CHC MNs to a existing server setup with the setup.sh script before just restart the script and type ìnî when asked if you want to install the dependencies at the beginning. After that just follow the steps from before in the interactive script.
+To add more CHC MNs to a existing server setup with the setup.sh script before just restart the script and type ‚Äún‚Äù when asked if you want to install the dependencies at the beginning. After that just follow the steps from before in the interactive script.
