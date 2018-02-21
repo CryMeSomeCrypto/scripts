@@ -98,7 +98,7 @@ b.	Type the following into the VPS.
 
 c.	Each MN has now its own control script under ~/bin (named with alias you typed before)
 
-d.	To see if the blocks are syncing “watch EarnzCoin-cli_mn1.sh getinfo”
+d.	To see if the blocks are syncing “watch EarnzCoind_mn1.sh getinfo”
 
 e.	If sync is finished go to your desktop wallet and start MNs in the masternode tab (unlock wallet before).
 
