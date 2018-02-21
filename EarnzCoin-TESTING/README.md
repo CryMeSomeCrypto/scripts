@@ -1,4 +1,4 @@
----------
+﻿---------
 Masternode Scripts
 ---------
 
@@ -110,4 +110,4 @@ f.	You can close your Desktop wallet after a while.
 Adding more nodes to existing VPS
 ---------
 
-To add more CHC MNs to a existing server setup with the setup.sh script before just restart the script and type “n” when asked if you want to install the dependencies at the beginning. After that just follow the steps from before in the interactive script.
+To add more ERZ MNs to a existing server setup with the setup.sh script before just restart the script and type “n” when asked if you want to install the dependencies at the beginning. After that just follow the steps from before in the interactive script.
