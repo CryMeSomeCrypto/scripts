@@ -29,7 +29,7 @@ if [[ $DOSETUP =~ "y" ]] ; then
 
   sudo apt-get install libzmq3-dev libminiupnpc-dev libssl-dev libevent-dev -y
 
-  sudo add-apt-repository ppa:bitcoin/bitcoin
+  sudo add-apt-repository -y ppa:bitcoin/bitcoin
 
   sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 
