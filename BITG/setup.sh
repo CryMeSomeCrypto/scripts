@@ -77,7 +77,7 @@ done
 for i in `seq 1 1 $MNCOUNT`; do
   echo ""
   echo "Enter alias for new node"
-  read ALIAS  
+  read ALIAS
 
   echo ""
   echo "Enter port for node $ALIAS"
@@ -100,7 +100,7 @@ for i in `seq 1 1 $MNCOUNT`; do
   echo '#!/bin/bash' > ~/bin/bitcoingreen-cli_$ALIAS.sh
   echo "bitcoingreen-cli -conf=$CONF_DIR/bitcoingreen.conf -datadir=$CONF_DIR "'$*' >> ~/bin/bitcoingreen-cli_$ALIAS.sh
   echo '#!/bin/bash' > ~/bin/bitcoingreen-tx_$ALIAS.sh
-  echo "bitcoingreen-tx -conf=$CONF_DIR/bitcoingreen.conf -datadir=$CONF_DIR "'$*' >> ~/bin/bitcoingreen-tx_$ALIAS.sh 
+  echo "bitcoingreen-tx -conf=$CONF_DIR/bitcoingreen.conf -datadir=$CONF_DIR "'$*' >> ~/bin/bitcoingreen-tx_$ALIAS.sh
   chmod 755 ~/bin/bitcoingreen*.sh
 
   mkdir -p $CONF_DIR
@@ -134,11 +134,11 @@ for i in `seq 1 1 $MNCOUNT`; do
 
   echo "" >> bitcoingreen.conf_TEMP
   echo "port=$PORT" >> bitcoingreen.conf_TEMP
-  echo "masternodeaddress=$IP:$PORT" >> bitcoingreen.conf_TEMP
+  echo "masternodeaddr=$IP:$PORT" >> bitcoingreen.conf_TEMP
   echo "masternodeprivkey=$PRIVKEY" >> bitcoingreen.conf_TEMP
   sudo ufw allow $PORT/tcp
 
   mv bitcoingreen.conf_TEMP $CONF_DIR/bitcoingreen.conf
-  
+
   sh ~/bin/bitcoingreend_$ALIAS.sh
 done
