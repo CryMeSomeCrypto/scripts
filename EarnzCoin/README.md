@@ -2,7 +2,7 @@
 Masternode Scripts
 ---------
 
-EarnzCoin - version 0.1 
+EarnzCoin - version 0.1
 
 ---------
 EarnzCoin Masternode Setup
@@ -21,7 +21,7 @@ We will create an address, private key and transaction for each masternode (MN i
 
 2.	Type “getaccountaddress MN1” and press Enter. Repeat for MN2, MN3, etc
 
-3.	Send exactly 1000 coins to each MN address
+3.	Send exactly 8000 coins to each MN address
 
 4.	Setup MNs in config:  Tools - Open Masternode.conf
 
@@ -68,7 +68,7 @@ After registration you get to the Dashboard. You have to do the first payment wi
 
 7.	Choose a region near you. It does not really matter.
 
-	a.	As “Server Type” choose Ubuntu and click 14.04 
+	a.	As “Server Type” choose Ubuntu and click 14.04
 
 	b.	As Server Size choose the 5$ instance with 1GB Ram. If available you can choose the 2.50$ one if you only want to run one or two nodes on it.
 
@@ -76,7 +76,7 @@ After registration you get to the Dashboard. You have to do the first payment wi
 
 	d.	After that click “Deploy now” in the overview you should see this:
 
-8.	Connect to the Server. 
+8.	Connect to the Server.
 
 9.	Download and execute script on VPS: (each MN must have unique ports)
 
